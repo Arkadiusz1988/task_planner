@@ -14,5 +14,6 @@ public class AppConfig {
     public Validator validator() {
         return new LocalValidatorFactoryBean();
     }
+//orika - mapper badz dozer - dodajemy beana jako
 
 }
