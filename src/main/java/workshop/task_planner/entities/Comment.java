@@ -1,9 +1,11 @@
 package workshop.task_planner.entities;
 
 
+import lombok.Data;
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Comment {
 
 
@@ -12,6 +14,6 @@ public class Comment {
     private Long id;
 
     @ManyToOne
-    private Tasks tasks;
+    private Task task;
 
 }

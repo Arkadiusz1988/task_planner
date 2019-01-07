@@ -4,6 +4,7 @@ package workshop.task_planner.entities;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.mindrot.jbcrypt.BCrypt;
+import workshop.task_planner.dto.UserDto;
 import workshop.task_planner.validations.user.LoginAttemptValidationGroup;
 import workshop.task_planner.validations.user.ValidLoginAttempt;
 
@@ -30,7 +31,7 @@ public class User {
   private String email;
 
   @OneToMany(mappedBy = "user" ,cascade = {CascadeType.ALL})
-  private List<Tasks> tasks = new ArrayList<>();
+  private List<Task> tasks = new ArrayList<>();
 
   @OneToMany(mappedBy = "user1",cascade = {CascadeType.ALL})
   private List<Category> categories = new ArrayList<>();
@@ -82,7 +83,6 @@ public class User {
   }
 
 
-
   @Override
   public String toString() {
     return new StringJoiner(", ", User.class.getSimpleName() + "[", "]")
@@ -91,6 +91,13 @@ public class User {
             .add("password='" + password + "'")
             .add("email='" + email + "'")
             .toString();
+  }
+
+  public UserDto toUserDto() {
+    UserDto user = new UserDto();
+    user.setUsername(username);
+    user.setEmail(email);
+    return user;
   }
 
 }

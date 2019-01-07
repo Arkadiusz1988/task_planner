@@ -1,11 +1,14 @@
 package workshop.task_planner.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
+@Data
 public class Category {
 
     @Id
@@ -18,7 +21,7 @@ public class Category {
     private User user1;
 
     @OneToMany(mappedBy = "category" ,cascade = {CascadeType.ALL})
-    private List<Tasks> tasks = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
 
 
 
