@@ -44,8 +44,6 @@ public class UserController {
     return authService.getUser();
   }
 
-
-
   @PostMapping("/login")
   public User login(
       @Validated(LoginAttemptValidationGroup.class) @RequestBody UserDto loginAttempt) {
@@ -70,8 +68,6 @@ public class UserController {
     if (!(authService.isUserLoggedIn())) {
       throw new UserUnauthenticated("user not logged or is not Admin");
     }
-    //Task task = new Task();
-    //task
     userRepository.delete(user);
     return user;
   }
