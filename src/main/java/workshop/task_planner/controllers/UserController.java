@@ -44,16 +44,6 @@ public class UserController {
     return authService.getUser();
   }
 
-//
-//  @GetMapping("/login")
-//  public String showLoginForm(Model model) {
-//    if (authService.isUserLoggedIn()) {
-//      return "redirect:/";
-//    }
-//    model.addAttribute("user", new UserDto());
-//    return "forms/login";
-//  }
-
   @PostMapping("/login")
   public User login(
       @Validated(LoginAttemptValidationGroup.class) @RequestBody UserDto loginAttempt) {
@@ -78,11 +68,8 @@ public class UserController {
     if (!(authService.isUserLoggedIn())) {
       throw new UserUnauthenticated("user not logged or is not Admin");
     }
-    //Task task = new Task();
-    //task
     userRepository.delete(user);
     return user;
   }
 
 }
-// zrobic token w userze uuid token String klasa UUID zeby wygenerowac String token, robimy save na znalezionym uzytkowniku, z tokenem, token robiony za kazdym razem nowy, tylko przy logwaniu - zwracamy login z tokenem(loginDTo) potem ten token w postmanie kopiujemy do headera, uzytoryzation i token, potem odbieramy sciagamy @RequestHeader do zmiennej String, do servisu dodajemy Token, w authService find by token dla uzytkownika, sprawdzamy dla otrzymanego tokena, czy istnieje

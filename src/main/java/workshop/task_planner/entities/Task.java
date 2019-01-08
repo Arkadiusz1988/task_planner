@@ -25,8 +25,6 @@ public class Task {
     @CreationTimestamp
     private Date creationDate;
 
-    private boolean status;
-
     @ManyToOne
     private User user;
 
@@ -37,10 +35,24 @@ public class Task {
     private List<Comment> comments = new ArrayList<>();
 
 
+    public Task(String name, String description, Date creationDate, User user, Category category, List<Comment> comments) {
+        this.name = name;
+        this.description = description;
+        this.creationDate = creationDate;
+        this.user = user;
+        this.category = category;
+        this.comments = comments;
+    }
+
+    public Task() {
+    }
+
     public TaskDto toTaskDto() {
         TaskDto taskDto = new TaskDto();
         taskDto.setName(name);
         taskDto.setDescription(description);
         return taskDto;
     }
+
+
 }
