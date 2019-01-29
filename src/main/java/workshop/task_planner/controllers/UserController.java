@@ -15,7 +15,7 @@ import workshop.task_planner.validations.user.RegistrationAttemptValidationGroup
 
 import java.util.List;
 
-
+// crud on user plus auth checked with validators
 @RestController
 @RequestMapping("/users")
 public class UserController {

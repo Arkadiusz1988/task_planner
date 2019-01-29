@@ -3,6 +3,8 @@ package workshop.task_planner.controllers;
 
 import lombok.Data;
 
+
+//answer if action was ok
 @Data
 public class Result {
 

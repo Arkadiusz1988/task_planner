@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 import workshop.task_planner.entities.User;
 
+
+// current user keep it in session plus simple methods to check if user is loggeg, logout, get user from session
 @Service
 @Scope(scopeName = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class AuthService {

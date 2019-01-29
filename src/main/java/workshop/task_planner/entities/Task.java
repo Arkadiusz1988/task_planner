@@ -31,6 +31,10 @@ public class Task {
     @ManyToOne
     private Category category;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+
     @OneToMany(mappedBy = "task" ,cascade = {CascadeType.ALL})
     private List<Comment> comments = new ArrayList<>();
 

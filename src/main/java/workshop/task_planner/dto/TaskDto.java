@@ -12,6 +12,8 @@ public class TaskDto {
 
     private String description;
 
+    private Status status;
+
 
     public Task toTask() {
         Task task = new Task();

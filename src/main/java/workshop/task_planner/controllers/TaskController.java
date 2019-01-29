@@ -6,6 +6,8 @@ import workshop.task_planner.dto.TaskDto;
 import workshop.task_planner.service.imp.TaskServiceImp;
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
+
+//crud on task entity
 @RestController
 @RequestMapping("/tasks")
 public class TaskController {
@@ -43,4 +45,7 @@ public class TaskController {
     public Result delete(@PathVariable Long id) {
         return Result.ok(taskServiceImp.remove(id));
     }
+
+
+
 }

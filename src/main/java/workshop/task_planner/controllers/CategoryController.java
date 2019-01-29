@@ -8,6 +8,8 @@ import workshop.task_planner.service.imp.CategoryServiceImp;
 
 import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 
+
+//crud on category plus send answer with results class
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {

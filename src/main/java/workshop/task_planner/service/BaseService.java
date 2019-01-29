@@ -3,6 +3,9 @@ package workshop.task_planner.service;
 import java.io.Serializable;
 import java.util.Collection;
 
+
+
+//base servies which is used in Task/Comment/Cstegory implementations Services
 public interface BaseService<D, I extends Serializable> {
 
       D save(D dto);

@@ -35,6 +35,9 @@ public class TaskServiceImp implements BaseService <TaskDto,Long> {
         task.setName(taskDto.getName());
         task.setDescription(taskDto.getDescription());
         // TO DO reszta setow
+        if(taskDto.getName().equals("dupa")){
+            throw new ExampleExp("bad words");
+        }
         taskRepository.save(task);
         return task.toTaskDto();
     }
@@ -64,6 +67,8 @@ public class TaskServiceImp implements BaseService <TaskDto,Long> {
                 .map(Task::toTaskDto)
                 .collect(Collectors.toList());
     }
+
+
 
 
 }
